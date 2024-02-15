@@ -1,0 +1,30 @@
+CREATE DATABASE homework6;
+
+CREATE TABLE barang(id serial primary key, id_kategori integer, nama_barang varchar, jumlah_barang integer, status_ketersediaan varchar);
+
+CREATE TABLE kategori_barang(id serial primary key, nama_kategori);
+
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(1, 'Tamiya', 100, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(1, 'Hotwheels', 100, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(2, 'Skuter', 50, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(2, 'Sepeda', 30, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(3, 'Drone', 25, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(3, 'Mobil RC', 50, 'tersedia');
+INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan) VALUES(4, 'Magnet', 0, 'kosong');
+
+SELECT * FROM barang;
+
+INSERT INTO kategori_barang(nama_kategori) VALUES('kendaraan');
+INSERT INTO kategori_barang(nama_kategori) VALUES('aktif');
+INSERT INTO kategori_barang(nama_kategori) VALUES('elektronik');
+INSERT INTO kategori_barang(nama_kategori) VALUES('edukasi');
+
+SELECT * FROM kategori_barang;
+
+UPDATE barang SET jumlah_barang='100', status_ketersediaan='tersedia' WHERE id=7;
+UPDATE barang SET jumlah_barang='50' WHERE id=2;
+
+DELETE FROM barang WHERE id=7;
+DELETE FROM barang WHERE id=1;
+
+SELECT * FROM barang b JOIN kategori_barang kb ON kb.id = b.id_kategori;
