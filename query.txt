@@ -14,10 +14,10 @@ INSERT INTO barang(id_kategori, nama_barang, jumlah_barang, status_ketersediaan)
 
 SELECT * FROM barang;
 
-INSERT INTO kategori_barang(nama_kategori) VALUES('kendaraan');
-INSERT INTO kategori_barang(nama_kategori) VALUES('aktif');
-INSERT INTO kategori_barang(nama_kategori) VALUES('elektronik');
-INSERT INTO kategori_barang(nama_kategori) VALUES('edukasi');
+INSERT INTO kategori_barang(nama_kategori varchar) VALUES('kendaraan');
+INSERT INTO kategori_barang(nama_kategori varchar) VALUES('aktif');
+INSERT INTO kategori_barang(nama_kategori varchar) VALUES('elektronik');
+INSERT INTO kategori_barang(nama_kategori varchar) VALUES('edukasi');
 
 SELECT * FROM kategori_barang;
 
